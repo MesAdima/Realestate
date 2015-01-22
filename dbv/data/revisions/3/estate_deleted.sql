@@ -1,0 +1,1 @@
+ALTER TABLE `estate` ADD `is_deleted` TINYINT NOT NULL DEFAULT '0' ;

@@ -7,5 +7,7 @@ CREATE TABLE `house_specifics` (
   `garden` int(11) NOT NULL,
   `garage` int(11) NOT NULL,
   `other` text NOT NULL,
-  PRIMARY KEY (`spec_id`)
+  PRIMARY KEY (`spec_id`),
+  KEY `house_specifics_house_idx` (`house_id`),
+  CONSTRAINT `house_specifics_house` FOREIGN KEY (`house_id`) REFERENCES `house` (`house_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
