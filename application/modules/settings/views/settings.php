@@ -18,24 +18,24 @@
 							<h3>Register House Type</h3>
 						</div>
 						<div class="content">
-						    <form class="form-horizontal group-border-dashed" action="#" novalidate>
+						    <form class="form-horizontal group-border-dashed" action="<?php echo base_url() . 'settings/addtype'?>" method="post">
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Description</label>
 									<div class="col-sm-6">
-										<input type="text" data-mask="description" class="form-control"/>
+										<input type="text" name="description" data-mask="description" class="form-control"/>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-3 control-label">House Type</label>
 									<div class="col-sm-6">
-										<input type="text" data-mask="type" class="form-control"/>
+										<input type="text" name="housetype" data-mask="type" class="form-control"/>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Multiple Houses</label>
 									<div class="col-sm-6">
-										<input type="checkbox" data-mask="multiple" class="form-control" value="yes"/> Yes <br>
-										<input type="checkbox" data-mask="multiple" class="form-control" value="no"/> No <br>
+										<input type="checkbox" name="multiplehouses" data-mask="multiple" class="form-control" value="yes"/> Yes <br>
+										<input type="checkbox" name="multiplehouses" data-mask="multiple" class="form-control" value="no"/> No <br>
 									</div>
 								</div>
 								
