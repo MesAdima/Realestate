@@ -3,7 +3,7 @@
   <div class="col-md-12">
     <div class="block-flat">
       <div class="header">              
-        <h3>List of all Estates</h3>
+        <h3>List of all Buildings</h3>
       </div>
       <div class="content">
         <div class="table-responsive">
@@ -14,6 +14,7 @@
               <th>Name</th>
               <th>Description</th>
               <th>Type No.</th>
+              <th>View</th>
               <th>Delete</th>
             </thead>
             <tbody>

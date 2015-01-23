@@ -9,5 +9,10 @@ class MY_Model extends CI_Model {
         date_default_timezone_set('Africa/Nairobi');
     }
 
-    
+    public function getallestates(){
+    	$query = $this->db->query("
+    		SELECT * FROM estates
+    		");
+    	$result = $query -> $result_array;
+    }
 }

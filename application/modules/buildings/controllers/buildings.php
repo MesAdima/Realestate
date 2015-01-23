@@ -90,7 +90,7 @@ class Buildings extends MY_Controller
                     $building_style .= '<td>'.$building_details['build_name'].'</td>';
                     $building_style .= '<td>'.$building_details['build_desc'].'</td>';
                     $building_style .= '<td>'.$building_details['housetype_id'].'</td>';
-                    $building_style .= '<td><a href = "'.base_url().'estates/estateprofile/'.$building_details['build_id'].'">View Building</a></td>';
+                    $building_style .= '<td><a href = "'.base_url().'buildings/buildingprofile/'.$building_details['build_id'].'">View Building</a></td>';
                     $building_style .= '<td><a href = "'.base_url().'buildings/updatebuilding/delete/'.$building_details['build_id'].'">Delete Building</td>';
                     $building_style .= '</tr>';
 

@@ -56,7 +56,12 @@
             <li><a href="<? echo base_url(); ?>admin"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
             <li><a href="#"><i class="fa fa-sitemap"></i><span>Estates</span></a></li>
             <li><a href="#"><i class="fa fa-building-o"></i><span>Buildings</span></a></li>
-            <li><a href="#"><i class="fa fa-home"></i><span>Houses</span></a></li>
+            <li><a href="#"><i class="fa fa-home"></i><span>Houses</span></a>
+              <ul class="sub-menu">
+                <li class="" ><a href="<?php echo base_url().'houses/housesindex'; ?>">All Houses</a></li>
+                <li class="" ><a href="<?php echo base_url().'houses/register'; ?>">Register House</a></li>
+              </ul>
+            </li>
             <li><a href="#"><i class="fa fa-cogs"></i><span>Settings</span></a>
               <ul class="sub-menu">
                 <li class="active" ><a href="#">Property Settings</a></li>

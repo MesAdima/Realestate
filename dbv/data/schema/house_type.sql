@@ -3,4 +3,4 @@ CREATE TABLE `house_type` (
   `description` text NOT NULL,
   `house_type` varchar(45) NOT NULL,
   PRIMARY KEY (`housetype_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1
+) ENGINE=MyISAM DEFAULT CHARSET=latin1
