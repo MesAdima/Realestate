@@ -15,7 +15,7 @@ class admin extends MY_Controller
 	public function index()
 	{
 		$data['content_page'] = "admin/dashboard";
-		$data['title'] = "Home|Administrator";
+		$data['title'] = "Home | Administrator";
 
 		$this->template->call_admin_template($data);
 	}
