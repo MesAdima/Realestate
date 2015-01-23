@@ -44,22 +44,22 @@ class Settings extends MY_Controller
 	
 	 function createhousetypeview($type)
     {
-        $buildings = $this->m_buildings->get_all_buildings();
-        $building_style = '';
-        if ($buildings) {
+        $housetype = $this->m_settings->get_house_type();
+        $houseview = '';
+        if ($housetype) {
             switch ($type) {
             case 'table':
                 $counter = 1;
-                foreach ($buildings as $key => $building_details) {
-                    $building_style .= '<tr>';
-                    $building_style .= '<td>'.$counter.'</td>';
-                    $building_style .= '<td>'.$building_details['est_id'].'</td>';
-                    $building_style .= '<td>'.$building_details['build_name'].'</td>';
-                    $building_style .= '<td>'.$building_details['build_desc'].'</td>';
-                    $building_style .= '<td>'.$building_details['housetype_id'].'</td>';
-                    $building_style .= '<td><a href = "'.base_url().'estates/estateprofile/'.$building_details['build_id'].'">View Building</a></td>';
-                    $building_style .= '<td><a href = "'.base_url().'buildings/updatebuilding/delete/'.$building_details['build_id'].'">Delete Building</td>';
-                    $building_style .= '</tr>';
+                foreach ($housetype as $key => $housetypeview) {
+                    $houseview .= '<tr>';
+                    $houseview .= '<td>'.$counter.'</td>';
+                    $houseview .= '<td>'.$housetypeview['housetype_id'].'</td>';
+                    $houseview .= '<td>'.$housetypeview['description'].'</td>';
+                    $houseview .= '<td>'.$housetypeview['house_type'].'</td>';
+                    $houseview .= '<td>'.$housetypeview['multiple_houses'].'</td>';
+                    $houseview .= '<td><a href = "'.base_url().'estates/estateprofile/'.$housetypeview['housetype_id'].'">View Building</a></td>';
+                    $houseview .= '<td><a href = "'.base_url().'buildings/updatebuilding/delete/'.$housetypeview['housetype_id'].'">Delete Building</td>';
+                    $houseview .= '</tr>';
 
                     $counter++;
                 }
@@ -71,7 +71,14 @@ class Settings extends MY_Controller
             }
         }
 
-        return $building_style;
+        return $housetypeview;
+    }
+
+	function housetypelist()
+    {
+        $data['houses_table'] = $this->createhousetypeview('table');
+        $data['content_page'] = 'buildings/allbuildings';
+        $this->template->call_admin_template($data);
     }
 
 

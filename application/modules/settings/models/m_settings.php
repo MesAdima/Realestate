@@ -9,13 +9,13 @@ class M_settings extends MY_Model {
     }
 
    public function addhousetype(){
-   		$description = strtoupper($this->input->post('description'));
-        $housetype = strtoupper($this->input->post('housetype'));
-        $multiplehouses = strtoupper($this->input->post('multiplehouses'));
+        $housetype = $this->input->post('housetype');
+		$description = $this->input->post('description');
+        $multiplehouses = $this->input->post('multiplehouses');
 		
 		$house_type_data = array();
 		$house_type_ = array(
-          'description' => $description,
+      	  'description' => $description,
           'house_type' => $housetype,
           'multiple_houses' => $multiplehouses
 		  );
@@ -29,6 +29,23 @@ class M_settings extends MY_Model {
 	
 	return $type;
    }
+   
+   public function get_house_type()
+	{
+		$housetype = array();
+		$query = $this->db->get_where('house_type', array('multiple_houses' => 0));
+		$result = $query->result_array();
+
+		if ($result) {
+			foreach ($result as $key => $value) {
+				$housetype[$value['housetype_id']] = $value;
+			}
+
+			return $housetype;
+		}
+		
+		return $housetype;
+	}
 
    
 }
